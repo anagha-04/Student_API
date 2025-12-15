@@ -1,11 +1,11 @@
-# from rest_framework import serializers
+from rest_framework import serializers
 
-# from api_sample.models import StudentModel
+from api_sample.models import StudentModel
 
-# class studentserializer(serializers.ModelSerializer):
+class studentserializer(serializers.ModelSerializer):
 
-#     class Meta:
+    class Meta:
 
-#         model = StudentModel
+        model = StudentModel
 
-#         fields = "__all__"
+        fields = "__all__"
