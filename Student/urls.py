@@ -21,5 +21,5 @@ from api_sample.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('listcreate/',StudentListCreateView.as_view(),name="list_create"),
-    # path('retrive/<int:pk>/',StudentUpdateretrivedeleteView.as_view(),name="retrive"),
+    path('retrive/<int:pk>/',StudentUpdateretrivedeleteView.as_view(),name="retrive"),
 ]

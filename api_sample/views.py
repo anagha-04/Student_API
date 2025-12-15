@@ -63,12 +63,12 @@ class StudentUpdateretrivedeleteView(APIView):
         
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 
-#     def delete(self,request,**kwargs):
+    def delete(self,request,**kwargs):
 
-#       id = kwargs.get("pk")
+      id = kwargs.get("pk")
 
-#       student =     get_object_or_404(StudentModel,id=id)
+      student =     get_object_or_404(StudentModel,id=id)
 
-#       student.delete()
+      student.delete()
 
-#       return Response({"message":"object deleted successfully"},status=status.HTTP_200_OK)
+      return Response({"message":"object deleted successfully"},status=status.HTTP_200_OK)
