@@ -1,12 +1,12 @@
 
 from django.shortcuts import render
-# from rest_framework.views import APIView
-# from rest_framework.response import Response
-# from rest_framework import status
-# from api_sample import serializers
-# from api_sample.models import StudentModel
-# from django.shortcuts import get_object_or_404
-# from api_sample.serializers import studentserializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from api_sample import serializers
+from api_sample.models import StudentModel
+from django.shortcuts import get_object_or_404
+from api_sample.serializers import studentserializer
 
 # # Create your views here.
 
@@ -15,24 +15,24 @@ from django.shortcuts import render
 # #stud data >> update def put
 # # stud data >> delete def delete 
 
-# class StudentListCreateView(APIView):
+class StudentListCreateView(APIView):
 
-#     def get(self,request):    #used to list all the data from db to the client as response
-#         student_details = StudentModel.objects.all()   # get all the objects from the model
-#         serializer = studentserializer(student_details, many =True) #convert into Json
-#         return Response(serializer.data)
+    def get(self,request):    #used to list all the data from db to the client as response
+        student_details = StudentModel.objects.all()   # get all the objects from the model
+        serializer = studentserializer(student_details, many =True) #convert into Json
+        return Response(serializer.data)
     
-#     def post(self,request):
+    def post(self,request):
 
-#         serializer = studentserializer(data=request.data)
+        serializer = studentserializer(data=request.data)
 
-#         if serializer.is_valid():
+        if serializer.is_valid():
 
-#             serializer.save()
+            serializer.save()
 
-#             return Response(status= status.HTTP_200_OK)
+            return Response(status= status.HTTP_200_OK)
         
-#         return Response(status= status.HTTP_400_BAD_REQUEST)
+        return Response(status= status.HTTP_400_BAD_REQUEST)
     
 
 # class StudentUpdateretrivedeleteView(APIView):
