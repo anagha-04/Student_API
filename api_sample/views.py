@@ -35,33 +35,33 @@ class StudentListCreateView(APIView):
         return Response(status= status.HTTP_400_BAD_REQUEST)
     
 
-# class StudentUpdateretrivedeleteView(APIView):
+class StudentUpdateretrivedeleteView(APIView):
 
-#     def get(self,request,**kwargs):
+    def get(self,request,**kwargs):
 
-#         id = kwargs.get('pk')
+        id = kwargs.get('pk')
 
-#         student = get_object_or_404(StudentModel,id=id)
+        student = get_object_or_404(StudentModel,id=id)
 
-#         serializer = studentserializer(student)
+        serializer = studentserializer(student)
 
-#         return Response(serializer.data,status=status.HTTP_200_OK)
+        return Response(serializer.data,status=status.HTTP_200_OK)
     
-#     def put(self,request,**kwargs):
+    def put(self,request,**kwargs):
 
-#         id = kwargs.get("pk")
+        id = kwargs.get("pk")
 
-#         student = get_object_or_404(StudentModel,id=id)
+        student = get_object_or_404(StudentModel,id=id)
 
-#         serializer = studentserializer(student,data= request.data)
+        serializer = studentserializer(student,data= request.data)
 
-#         if serializer.is_valid():
+        if serializer.is_valid():
 
-#             serializer.save()
+            serializer.save()
 
-#             return Response(serializer.data,status=status.HTTP_201_CREATED)
+            return Response(serializer.data,status=status.HTTP_201_CREATED)
         
-#         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 
 #     def delete(self,request,**kwargs):
 
